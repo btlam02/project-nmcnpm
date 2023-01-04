@@ -10,7 +10,7 @@ exports.productById = (req, res, next, id) => {
         .exec((err, product) => {
             if (err || !product) {
                 return res.status(400).json({
-                    error: 'Product not found'
+                    error: 'Product  is not found'
                 });
             }
             req.product = product;
@@ -96,9 +96,8 @@ exports.update = (req, res) => {
         let product = req.product;
         product = _.extend(product, fields);
 
-        // 1kb = 1000
-        // 1mb = 1000000
-
+        
+        // file photo is not bigger than 1MB
         if (files.photo) {
             // console.log("FILES PHOTO: ", files.photo);
             if (files.photo.size > 1000000) {
