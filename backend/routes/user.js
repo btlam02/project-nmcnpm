@@ -1,8 +1,8 @@
 const express = require('express');
 const router = express.Router();
-
+// API auth
 const { requireSignin, isAuth, isAdmin } = require('../controllers/auth');
-
+// API user
 const { userById, read, update, purchaseHistory } = require('../controllers/user');
 
 router.get('/secret', requireSignin, (req, res) => {
