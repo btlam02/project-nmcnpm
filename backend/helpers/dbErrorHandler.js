@@ -1,9 +1,10 @@
 "use strict";
 
 /**
- * Get unique error field name
+ *  Get unique error field name
  */
-const uniqueMessage = error => {
+const uniqueMessage = error => 
+{
     let output;
     try {
         let fieldName = error.message.substring(
@@ -15,14 +16,14 @@ const uniqueMessage = error => {
             fieldName.slice(1) +
             " already exists";
     } catch (ex) {
-        output = "Unique field already exists";
+        output = "Handle Unique field already exists";
     }
 
     return output;
 };
 
 /**
- * Get the erroror message from error object
+ *  Get the erroror message from error object
  */
 exports.errorHandler = error => {
     let message = "";
